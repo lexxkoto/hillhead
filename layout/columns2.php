@@ -38,11 +38,9 @@ if ($navdraweropen) {
 }
 
 $hillheadnotificationtype = get_config('theme_hillhead', 'hillhead_notification_type');
-error_log(print_r($hillheadnotificationtype, true));
 
 switch($hillheadnotificationtype) {
     case 'alert-danger':
-        error_log('Valid notification type (danger): '.$hillheadnotificationtype);
         $notiftext = '<div class="alert alert-danger"><i class="fa fa-warning"></i>&emsp;'.get_config('theme_hillhead', 'hillhead_notification').'</div>';
         break;
     case 'alert-warning':
@@ -55,7 +53,6 @@ switch($hillheadnotificationtype) {
         $notiftext = '<div class="alert alert-info"><i class="fa fa-info-circle"></i>&emsp;'.get_config('theme_hillhead', 'hillhead_notification').'</div>';
         break;
     default:
-        error_log('Unknown notification type: '.$hillheadnotificationtype);
         $notiftext = '';
 }
 

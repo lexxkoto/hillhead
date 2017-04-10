@@ -97,7 +97,12 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configtextarea('theme_hillhead/hillhead_notification',                                                              
         get_string('hillhead_notification', 'theme_hillhead'), get_string('hillhead_notification_desc', 'theme_hillhead'), '', PARAM_RAW);                      
     $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
-    $page->add($setting);      
+    $page->add($setting);
+    
+    $setting = new admin_setting_configtextarea('theme_hillhead/login_intro',                                                              
+    get_string('login_intro', 'theme_hillhead'), get_string('login_intro_desc', 'theme_hillhead'), '', PARAM_RAW);                      
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);   
  
     $settings->add($page);                                                                                                          
 }

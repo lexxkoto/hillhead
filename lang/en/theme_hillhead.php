@@ -50,3 +50,5 @@ $string['hillhead_notification_danger'] = 'Red - Errors and problem acknowledgem
 $string['hillhead_notification_warning'] = 'Yellow - Planned downtime warnings';
 $string['hillhead_notification_success'] = 'Green - Success notifications';
 $string['hillhead_notification_info'] = 'Blue - Information and advisory';                                                                                   
+$string['login_intro'] = 'Login Page Introduction';
+$string['login_intro_desc'] = 'Anything you enter here will be shown on the Moodle login page. We recommend a one line &lt;h2&gt; tag followed by a couple of &lt;p&gt; tags.';

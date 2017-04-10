@@ -14,6 +14,8 @@ $flat-blue: #3498DB;
 $flat-blue-dark: #2980B9;
 $flat-turquoise: #1ABC9C;
 $flat-turquoise-dark: #16A085;
+$flat-grey: #ecf0f1;
+$flat-grey-dark: #bdc3c7;
 
 $brand-primary: $gu-blue;
 
@@ -33,9 +35,9 @@ $btn-primary-color:              #fff;
 $btn-primary-bg:                 $flat-blue;
 $btn-primary-border:             $flat-blue-dark;
 
-$btn-secondary-color:              #fff;
-$btn-secondary-bg:                 $flat-turquoise;
-$btn-secondary-border:             $flat-turquoise-dark;
+$btn-secondary-color:              #555;
+$btn-secondary-bg:                 $flat-grey;
+$btn-secondary-border:             $flat-grey-dark;
 
 $message-sent-background: #B9E6F9;
 $message-sent-border: #A3CADB;
@@ -79,6 +81,10 @@ header .navbar-brand {
     width: 111px;
 }
 
+.form-group .fitem.btn-cancel .btn-secondary {
+    color: #7f8c8d;
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
     header .navbar-brand {
         background-image: url([[pix:theme|gu-logo-retina]]);
@@ -90,18 +96,17 @@ body#page-login-index {
     background-image: url([[pix:theme|login-background]]);
     background-attachment: fixed;
     background-position: 50% 50%;
-    background-repeat: no-repeat;
+    background-size: cover;
 }
-
-@media (min-width:1921px) or (min-height:1081px) {
+@media (max-width:1920px) and (max-height:1080px) {
     body#page-login-index {
-        background-attachment: inherit;
-        background-size: cover;
+        background-size: auto;
+        background-position: 50% 50%;
     }
 }
 
 body#page-login-index #page-footer {
-    background-color: rgba(226, 229, 231, 0.7);
+    background-color: rgba(226, 229, 231, 0.8);
 }
 
 body#page-login-index .card-block {
@@ -214,6 +219,63 @@ footer h3 {
 .message .content.left {
     background-color: $message-received-background;
     border-color: $message-received-border;
+}
+
+.gu-login {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.gu-login input, .gu-login button, .gu-login p {
+    margin-bottom: 10px;
+}
+
+.gu-login *:last-child {
+    margin-bottom: 0;
+}
+
+.gu-login .gu-feature-link {
+    padding: 0;
+    text-align: center;
+}
+
+.gu-login .alert {
+    padding: 4px 7px;
+    margin-bottom: 10px;
+}
+
+.gu-login-intro h2 {
+    color: $gu-blue;
+    font-size: 30px !important;
+    font-weight: 400;
+    line-height: 1.4em;
+}
+
+
+.gu-login-intro a {
+    color: $gu-blue;
+    text-decoration: underline;
+}
+
+.gu-login-intro a:hover {
+    color: $gu-blue;
+    text-decoration: underline;
+}
+
+.gu-login-intro p {
+    color: $gu-blue;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.4em;
+}
+
+.gu-login-spacer {
+    height: 100px;
+}
+
+#page-login-index header button, #page-login-index header .login {
+    display: none;
 }
 
 // This gets rid of the annoying padding on the Dashboard

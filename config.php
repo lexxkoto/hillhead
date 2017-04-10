@@ -38,3 +38,4 @@ $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 $THEME->scss = function($theme) {
     return theme_hillhead_get_main_scss_content($theme);
 };
+$THEME->rendererfactory = 'theme_overridden_renderer_factory';
