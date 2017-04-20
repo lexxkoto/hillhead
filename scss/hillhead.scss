@@ -223,12 +223,16 @@ footer h3 {
 
 .gu-login {
     background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 10px;
+    border-radius: 6px;
     padding: 10px;
 }
 
 .gu-login input, .gu-login button, .gu-login p {
     margin-bottom: 10px;
+}
+
+.gu-login input, .gu-login button {
+    border-radius: 3px;
 }
 
 .gu-login *:last-child {
@@ -293,3 +297,128 @@ footer h3 {
 #region-main > .card, #page-enrol-users #region-main > #filterform, .path-calendar .maincalendar #region-main > .calendar-event-panel, .block .calendar-event-panel #region-main > .yui3-overlay-content, .que #region-main > .history, .userprofile .profile_tree #region-main > section, #region-main > .groupinfobox, #region-main > .forumpost, .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #region-main > .yui-layout-unit-right, .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #region-main > .yui-layout-unit-bottom, .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages #region-main > .chat-message.course-theme, #region-main > .well {
     min-height: 0;
 }
+
+// Accessibility Tools
+
+body.hillhead-font-comic {
+    font-family: "Chalkboard", "Comic Sans", sans-serif;
+}
+
+body.hillhead-font-modern {
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+body.hillhead-font-classic {
+    font-family: "Palatino", "Times New Roman", serif;
+}
+
+body.hillhead-size-120 {
+    font-size: 120%;
+}
+
+body.hillhead-size-140 {
+    font-size: 140%;
+}
+
+body.hillhead-size-160 {
+    font-size: 160%;
+}
+
+body.hillhead-contrast-yb {
+    background-color: #000 !important;
+}
+
+body.hillhead-contrast-yb * {
+    background-color: #000 !important;
+    color: #cc0 !important;
+    border-color: #cc0 !important;
+    border-radius: 0;
+}
+
+body.hillhead-contrast-by {
+    background-color: #ee6 !important;
+}
+
+body.hillhead-contrast-by * {
+    background-color: #ee6 !important;
+    color: #111 !important;
+    border-color: #111 !important;
+    border-radius: 0;
+}
+
+body.hillhead-contrast-wg {
+    background-color: #666 !important;
+}
+
+body.hillhead-contrast-wg * {
+    background-color: #666 !important;
+    color: #eee !important;
+    border-color: #eee !important;
+    border-radius: 0;
+}
+
+body.hillhead-contrast-bb {
+    background-color: #B9D9EE !important;
+}
+
+body.hillhead-contrast-bb * {
+    background-color: #B9D9EE !important;
+    color: #111 !important;
+    border-color: #111 !important;
+    border-radius: 0;
+}
+
+body.hillhead-contrast-br {
+    background-color: #EEB9B9 !important;
+}
+
+body.hillhead-contrast-br * {
+    background-color: #EEB9B9 !important;
+    color: #111 !important;
+    border-color: #111 !important;
+    border-radius: 0;
+}
+
+body.hillhead-contrast #nav-drawer {
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+
+body.hillhead-contrast header .navbar-brand {
+    background-image: none;
+}
+
+body.hillhead-contrast header .navbar-brand span.site-name {
+    text-indent: 0;
+}
+
+.hh-acc {
+    padding-left: 48px !important;
+    background-repeat: no-repeat;
+    background-position: 12px 50%;
+}
+
+body.hillhead-bold * {
+    font-weight: bold !important;
+}
+
+.hh-acc-ac-on, .hh-acc-ac-of { background-image: url([[pix:theme|accessibility]]);}
+
+.hh-acc-ft-de { background-image: url([[pix:theme|font-original]]);}
+.hh-acc-ft-mo { background-image: url([[pix:theme|font-modern]]);}
+.hh-acc-ft-cl { background-image: url([[pix:theme|font-classic]]);}
+.hh-acc-ft-co { background-image: url([[pix:theme|font-comic]]);}
+
+.hh-acc-fs-10 { background-image: url([[pix:theme|font-100]]);}
+.hh-acc-fs-12 { background-image: url([[pix:theme|font-120]]);}
+.hh-acc-fs-14 { background-image: url([[pix:theme|font-140]]);}
+
+.hh-acc-th-de { background-image: url([[pix:theme|theme-or]]);}
+.hh-acc-th-yb { background-image: url([[pix:theme|theme-yb]]);}
+.hh-acc-th-by { background-image: url([[pix:theme|theme-by]]);}
+.hh-acc-th-wg { background-image: url([[pix:theme|theme-wg]]);}
+.hh-acc-th-br { background-image: url([[pix:theme|theme-br]]);}
+.hh-acc-th-bb { background-image: url([[pix:theme|theme-bb]]);}
+
+.hh-acc-fb-on { background-image: url([[pix:theme|font-bold-on]]);}
+.hh-acc-fb-of { background-image: url([[pix:theme|font-bold-off]]);}

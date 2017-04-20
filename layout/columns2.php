@@ -37,6 +37,67 @@ if ($navdraweropen) {
     $extraclasses[] = 'drawer-open-left';
 }
 
+$theme_hillhead_font = get_user_preferences('theme_hillhead_font');
+
+switch($theme_hillhead_font) {
+    case 'modern':
+        $extraclasses[]='hillhead-font-modern';
+        break;
+    case 'classic':
+        $extraclasses[]='hillhead-font-classic';
+        break;
+    case 'comic':
+        $extraclasses[]='hillhead-font-comic';
+        break;
+}
+
+$theme_hillhead_size = get_user_preferences('theme_hillhead_size');
+
+switch($theme_hillhead_size) {
+    case '120':
+        $extraclasses[]='hillhead-size-120';
+        break;
+    case '140':
+        $extraclasses[]='hillhead-size-140';
+        break;
+    case '160':
+        $extraclasses[]='hillhead-size-160';
+        break;
+}
+
+$theme_hillhead_contrast = get_user_preferences('theme_hillhead_contrast');
+
+switch($theme_hillhead_contrast) {
+    case 'by':
+        $extraclasses[]='hillhead-contrast';
+        $extraclasses[]='hillhead-contrast-by';
+        break;
+    case 'yb':
+        $extraclasses[]='hillhead-contrast';
+        $extraclasses[]='hillhead-contrast-yb';
+        break;
+    case 'wg':
+        $extraclasses[]='hillhead-contrast';
+        $extraclasses[]='hillhead-contrast-wg';
+        break;
+    case 'bb':
+        $extraclasses[]='hillhead-contrast';
+        $extraclasses[]='hillhead-contrast-bb';
+        break;
+    case 'br':
+        $extraclasses[]='hillhead-contrast';
+        $extraclasses[]='hillhead-contrast-br';
+        break;
+}
+
+$theme_hillhead_bold = get_user_preferences('theme_hillhead_bold');
+
+switch($theme_hillhead_bold) {
+    case 'on':
+        $extraclasses[]='hillhead-bold';
+        break;
+}
+
 $hillheadnotificationtype = get_config('theme_hillhead', 'hillhead_notification_type');
 
 switch($hillheadnotificationtype) {
@@ -56,6 +117,140 @@ switch($hillheadnotificationtype) {
         $notiftext = '';
 }
 
+$usesAccessibilityTools=get_user_preferences('theme_hillhead_accessibility', false);
+
+if($usesAccessibilityTools === false) {
+    $accessibilityTools = Array(
+        Array(
+            Array(
+                'o'=>'theme_hillhead_accessibility',
+                'v'=>'on',
+                'c'=>'hh-acc-ac-on',
+                't'=>'Show Accessibility Tools',
+            ),
+        ),
+    );
+} else {
+    $accessibilityTools = Array(
+        Array(
+            Array(
+                'o'=>'theme_hillhead_accessibility',
+                'v'=>'clear',
+                'c'=>'hh-acc-ac-of',
+                't'=>'Hide Accessibility Tools',
+            ),
+        ),
+        Array(
+            Array(
+                'o'=>'theme_hillhead_font',
+                'v'=>'clear',
+                'c'=>'hh-acc-ft-de',
+                't'=>'Default Font',
+            ),
+            Array(
+                'o'=>'theme_hillhead_font',
+                'v'=>'modern',
+                'c'=>'hh-acc-ft-mo',
+                't'=>'Modern Font',
+            ),
+            Array(
+                'o'=>'theme_hillhead_font',
+                'v'=>'classic',
+                'c'=>'hh-acc-ft-cl',
+                't'=>'Classic Font',
+            ),
+            Array(
+                'o'=>'theme_hillhead_font',
+                'v'=>'comic',
+                'c'=>'hh-acc-ft-co',
+                't'=>'Comic Font',
+            ),
+        ),
+        Array(
+            Array(
+                'o'=>'theme_hillhead_size',
+                'v'=>'clear',
+                'c'=>'hh-acc-fs-10',
+                't'=>'Default Text Size',
+            ),
+            Array(
+                'o'=>'theme_hillhead_size',
+                'v'=>'120',
+                'c'=>'hh-acc-fs-12',
+                't'=>'Large Text Size',
+            ),
+            Array(
+                'o'=>'theme_hillhead_size',
+                'v'=>'140',
+                'c'=>'hh-acc-fs-14',
+                't'=>'Huge Text Size',
+            ),
+        ),
+        Array(
+            Array(
+                'o'=>'theme_hillhead_bold',
+                'v'=>'clear',
+                'c'=>'hh-acc-fb-of',
+                't'=>'Use Normal Fonts',
+            ),
+            Array(
+                'o'=>'theme_hillhead_bold',
+                'v'=>'on',
+                'c'=>'hh-acc-fb-on',
+                't'=>'Use Bold Fonts',
+            ),
+        ),
+        Array(
+            Array(
+                'o'=>'theme_hillhead_contrast',
+                'v'=>'clear',
+                'c'=>'hh-acc-th-de',
+                't'=>'Default Moodle Theme',
+            ),
+            Array(
+                'o'=>'theme_hillhead_contrast',
+                'v'=>'yb',
+                'c'=>'hh-acc-th-yb',
+                't'=>'Yellow on Black Theme',
+            ),
+            Array(
+                'o'=>'theme_hillhead_contrast',
+                'v'=>'by',
+                'c'=>'hh-acc-th-by',
+                't'=>'Black on Yellow Theme',
+            ),
+            Array(
+                'o'=>'theme_hillhead_contrast',
+                'v'=>'wg',
+                'c'=>'hh-acc-th-wg',
+                't'=>'White on Grey Theme',
+            ),
+            Array(
+                'o'=>'theme_hillhead_contrast',
+                'v'=>'br',
+                'c'=>'hh-acc-th-br',
+                't'=>'Black on Red Theme',
+            ),
+            Array(
+                'o'=>'theme_hillhead_contrast',
+                'v'=>'bb',
+                'c'=>'hh-acc-th-bb',
+                't'=>'Black on Blue Theme',
+            ),
+        ),
+    );
+}
+
+$acc = '';
+
+foreach($accessibilityTools as $accessibilityGroup) {
+    $acc .= '<nav class="list-group m-t-1">';
+    foreach($accessibilityGroup as $accessibilityItem) {
+        $acc .= '<a class="list-group-item hh-acc '.$accessibilityItem['c'].'" href="'.$CFG->wwwroot.'/theme/hillhead/accessibility.php?o='.$accessibilityItem['o'].'&v='.$accessibilityItem['v'].'">'.$accessibilityItem['t'].'</a>';
+    }
+    $acc .= '</nav>';
+}
+
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
@@ -69,10 +264,10 @@ $templatecontext = [
     'navdraweropen' => $navdraweropen,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
-    'hillheadnotification' => $notiftext
+    'hillheadnotification' => $notiftext,
+    'accessibilityText' => $acc
 ];
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
 
 echo $OUTPUT->render_from_template('theme_hillhead/columns2', $templatecontext);
-
