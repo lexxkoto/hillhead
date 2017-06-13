@@ -34,7 +34,7 @@ $body-bg: $gu-background;
 $spacer: 20px;
 $border-width: 1px;
 $navbar-height: 55px;
-$footer-min-height: 155px;
+$footer-min-height: 195px;
 
 $card-border-radius:       4px;
 $card-border-color:        $gu-island-border;
@@ -223,7 +223,7 @@ header .usermenu .dropdown-toggle {
 }
 
 #page-footer {
-    margin-top: -185px;
+    margin-top: -205px;
 }
 
 
@@ -525,11 +525,13 @@ body.hillhead-bold * {
     color: $gu-heather;
 }
 
-.card-block {
+body.path-my #region-main .card-block, body.path-course-view #region-main .card-block {
     padding: 0 !important;
 }
 
-#page-header .card-block, .block-myoverview .card-block, #page-search-index #region-main .card-block {
+/*#page-header .card-block, .block-myoverview .card-block, #page-search-index #region-main .card-block, .path-admin #region-main .card-block*/
+
+.card-block {
     padding: 20px !important;
 }
 
@@ -540,6 +542,81 @@ body.hillhead-bold * {
 
 .card-block .content {
     padding: 20px;
+}
+
+body.path-course-view .course-content > ul {
+    
+}
+
+body.path-course-view .course-content > ul > li.section {
+    background-color: $gu-island-back;
+    border: 1px solid $gu-island-border !important;
+    margin-bottom: 20px;
+    border-radius: $card-border-radius;
+    padding: 0;
+}
+
+.course-content > ul > li.section .sectionname {
+    padding: 10px 20px 6px 20px !important;
+    border-bottom: 1px solid $gu-island-border;
+    color: $gu-heather;
+    margin-bottom: 20px;
+}
+
+.format-topcoll .course-content > ul > li.section .sectionname {
+    padding: 5px;
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.course-content ul.ctopics li.section.main, .course-content ul.ctopics li.tcsection {
+    margin: 0px !important;
+    margin-bottom: 20px !important;
+}
+
+.course-content ul.ctopics li.section .content .toggle, .course-content ul.ctopics li.section .content.sectionhidden {
+    border-radius: 0 !important;
+}
+
+.course-content ul.ctopics li.section.main .content, .course-content ul.ctopics li.tcsection .content {
+    margin: 0 60px;
+}
+
+.course-content ul.ctopics > li.section .right {
+    padding: 0 !important;
+}
+
+#page-course-view-grid #gridmiddle-column {
+    background-color: $gu-island-back;
+    border: 1px solid $gu-island-border !important;
+    padding: 20px;
+    border-radius: $card-border-radius;
+}
+
+.course-content > ul > li.section .sectionname a {
+    color: $gu-heather;
+}
+
+.course-content > ul > li.section .section-modchooser {
+    padding: 5px 20px !important;
+    border-top: 1px solid $gu-island-border;
+    margin-top: 20px;
+}
+
+.course-content > ul > li.section .summary {
+    margin-top: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.course-content > ul ul.section {
+    margin: 0 20px;
+    padding-left: 0;
+}
+
+.course-content > ul > li.section .right {
+    padding: 0 20px !important;
 }
 
 .block_myoverview .courses-view-course-item {
@@ -566,7 +643,7 @@ body.hillhead-bold * {
     height: 50px  !important;
 }
 
-#region-main.has-blocks > .card-block {
+#region-main.has-blocks > .card-block, body.path-course-view #region-main .card-block {
     background: transparent;
     border: none;
     margin-bottom: 0;
