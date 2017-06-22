@@ -44,12 +44,12 @@ $card-border-radius:       0;
 $card-border-color:        $gu-island-border;
 
 $btn-primary-color:              #fff;
-$btn-primary-bg:                 $flat-forest;
-$btn-primary-border:             $flat-forest-dark;
+$btn-primary-bg:                 $flat-blue;
+$btn-primary-border:             $flat-blue-dark;
 
-$btn-secondary-color:              #fff;
-$btn-secondary-bg:                 $flat-blue;
-$btn-secondary-border:             $flat-blue-dark;
+$btn-secondary-color:              #555;
+$btn-secondary-bg:                 $flat-grey;
+$btn-secondary-border:             $flat-grey-dark;
 
 $message-sent-background: #B9E6F9;
 $message-sent-border: #A3CADB;
@@ -76,6 +76,43 @@ h3 {
 
 h4 {
     font-size: 1.1em !important;
+}
+
+a {
+    color: $flat-blue !important;
+}
+
+a:hover {
+    color: $flat-blue-dark !important;
+}
+
+header.navbar a.dropdown-toggle {
+    color: #fff !important;
+}
+
+header.navbar a.dropdown-item {
+    color: #555 !important;
+}
+
+.table-hover tbody tr:hover, table.grading-report tbody tr:hover, .forumheaderlist tbody tr:hover, .generaltable tbody tr:hover, table.flexible tbody tr:hover, .category_subcategories tbody tr:hover, table#modules tbody tr:hover, table#permissions tbody tr:hover {
+    background: inherit !important;
+}
+
+a.nav-link, a.btn-default {
+    color: #555 !important;
+}
+
+#nav-drawer a {
+    color: #555 !important;
+}
+
+footer a, footer p {
+    color: #555 !important;
+}
+
+.pagination .active a,
+h3.sectionname a {
+    color: #fff !important;
 }
 
 #page {
@@ -170,10 +207,6 @@ body.notloggedin header .usermenu {
 body.notloggedin header .usermenu a, body.notloggedin header .usermenu a:hover {
     color: #fff;
     text-decoration: underline;
-}
-
-.form-group .fitem.btn-cancel .btn-secondary {
-    color: #7f8c8d;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -649,28 +682,12 @@ body.editing .course-content > ul > li.section .sectionname {
     padding: 0 20px !important;
 }
 
+.block_myoverview .course-info-container {
+    margin: 20px;
+}
+
 .block_myoverview .courses-view-course-item {
     height: 150px !important;
-}
-
-.progress-chart-container {
-    width: 50px !important;
-    height: 50px  !important;
-}
-
-.progress-chart-container .no-progress{
-    width: 50px !important;
-    height: 50px  !important;
-}
-
-.progress-chart-container .progress-doughnut {
-    width: 50px !important;
-    height: 50px  !important;
-}
-
-.progress-chart-container .progress-doughnut .progress-indicator {
-    width: 50px !important;
-    height: 50px  !important;
 }
 
 #region-main.has-blocks > .card-block, body.path-course-view #region-main .card-block {
@@ -682,26 +699,6 @@ body.editing .course-content > ul > li.section .sectionname {
 .action-menu .userpicture {
     width: 35px !important;
     height: 35px !important;
-}
-
-// Button fixes
-
-.form-group .btn-secondary, header.navbar .btn-secondary {
-    background-color: $flat-grey;
-    border-color: $flat-grey-dark;
-    color: #555;
-}
-
-.form-group .btn-secondary, header.navbar .btn-secondary {
-     &:hover,
-    &:focus,
-    &.focus {
-        background-color: darken($flat-grey, 17%);
-        border-color: darken($flat-grey-dark, 25%);
-    }
-    background-color: darken($flat-grey, 10%);
-    border-color: darken($flat-grey-dark, 12%);
-    color: #555;
 }
 
 @keyframes lift {
