@@ -43,11 +43,11 @@ $footer-min-height: 152px;
 $card-border-radius:       0;
 $card-border-color:        $gu-island-border;
 
-$btn-primary-color:              #fff;
+$btn-primary-color:              #fff !important;
 $btn-primary-bg:                 $flat-blue;
 $btn-primary-border:             $flat-blue-dark;
 
-$btn-secondary-color:              #555;
+$btn-secondary-color:              #555 !important;
 $btn-secondary-bg:                 $flat-grey;
 $btn-secondary-border:             $flat-grey-dark;
 
@@ -79,11 +79,11 @@ h4 {
 }
 
 a {
-    color: $flat-blue !important;
+    color: $flat-blue;
 }
 
 a:hover {
-    color: $flat-blue-dark !important;
+    color: $flat-blue-dark;
 }
 
 header.navbar a.dropdown-toggle {
@@ -597,6 +597,21 @@ body.path-my #region-main .card-block, body.path-course-view #region-main .card-
     padding: 20px;
 }
 
+.card-block .block-controls {
+    color: #fff !important;
+    font-size: 16px;
+    padding-top: 6px;
+    padding-right: 20px;
+}
+
+.card-block .block-controls a i.icon {
+    color: #fff !important;
+}
+
+.card-block .block-controls .dropdown-toggle::after {
+    color: #fff;
+}
+
 body.path-course-view .course-content > ul {
     
 }
@@ -607,10 +622,19 @@ body.path-course-view .course-content > ul > li.section {
     margin-bottom: 20px;
     border-radius: $card-border-radius;
     padding: 0;
+    overflow: auto;
+}
+
+body.path-course-view .course-content > ul > li.section .content {
+    padding-top: 7px;
+    box-sizing: border-box;
+}
+
+body.path-course-view.editing .course-content > ul > li.section .content {
+    padding-top: 0;
 }
 
 .course-content > ul > li.section .sectionname {
-    margin-top: 5px; // Fixes collapsing margin issue
     padding: 10px 20px !important;
     border-bottom: 1px solid $gu-island-border;
     background-color: #4f5961;
@@ -649,6 +673,10 @@ body.editing .course-content > ul > li.section .sectionname {
     padding: 0 !important;
 }
 
+.course-content > ul > li.section .side i, .course-content > ul > li.section .sectionname i, .course-content > ul > li.section a.dropdown-toggle  {
+    color: #fff !important;
+}
+
 #page-course-view-grid #gridmiddle-column {
     background-color: $gu-island-back;
     border: 1px solid $gu-island-border !important;
@@ -675,7 +703,12 @@ body.editing .course-content > ul > li.section .sectionname {
 
 .course-content > ul ul.section {
     margin: 0 20px 20px 20px;
-    padding-left: 0;
+    padding: 0;
+}
+
+.course-content > ul .section_availability {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .course-content > ul > li.section .right {
