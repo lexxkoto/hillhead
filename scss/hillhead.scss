@@ -86,6 +86,10 @@ a:hover {
     color: $flat-blue-dark;
 }
 
+b, strong {
+    font-weight: 700;
+}
+
 header.navbar a.dropdown-toggle {
     color: #fff !important;
 }
@@ -723,7 +727,8 @@ body.editing .course-content > ul > li.section .sectionname {
     height: 150px !important;
 }
 
-#region-main.has-blocks > .card-block, body.path-course-view #region-main .card-block {
+body.path-my #region-main.has-blocks > .card-block,
+body.path-course-view #region-main .card-block {
     background: transparent;
     border: none;
     margin-bottom: 0;
