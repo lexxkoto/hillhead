@@ -79,11 +79,11 @@ h4 {
 }
 
 a {
-    color: $flat-blue;
+    color: $flat-blue !important;
 }
 
 a:hover {
-    color: $flat-blue-dark;
+    color: $flat-blue-dark !important;
 }
 
 b, strong {
@@ -411,6 +411,18 @@ footer h3 {
 
 .gu-login-spacer {
     height: 100px;
+}
+
+.gu-login .rememberpass {
+    padding-top: 8px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0;
+    border-top: 1px solid #8CAECB;
+}
+
+.gu-login .rememberpass input {
+    margin-bottom: 0;
+    margin-right: 10px;
 }
 
 #page-login-index header button, #page-login-index header .login {
