@@ -712,6 +712,19 @@ body.editing .course-content > ul > li.section .sectionname {
     color: #fff !important;
 }
 
+div#gridshadebox_overlay {
+    z-index: 9998;
+}
+
+div#gridshadebox_content.absolute {
+    top: 75px !important;
+    z-index: 9999;
+}
+
+#gridshadebox_content.fit_to_window {
+    z-index: 9999;
+}
+
 #page-course-view-grid #gridmiddle-column {
     background-color: $gu-island-back;
     border: 1px solid $gu-island-border !important;
