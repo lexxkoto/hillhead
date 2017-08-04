@@ -461,7 +461,7 @@ body.path-course-view .course-content > ul > li.section {
     margin-bottom: 20px;
     border-radius: $card-border-radius;
     padding: 0;
-    overflow: auto;
+    overflow: visible;
 }
 
 body.path-course-view .course-content > ul > li.section .content {
@@ -513,7 +513,7 @@ body.editing .course-content > ul > li.section .sectionname {
     padding: 0 !important;
 }
 
-.course-content > ul > li.section .side i, .course-content > ul > li.section .sectionname i, .course-content > ul > li.section a.dropdown-toggle  {
+.course-content > ul > li.section .side i, .course-content > ul > li.section .sectionname i, .course-content > ul > li.section .side a.dropdown-toggle  {
     color: #fff !important;
 }
 
