@@ -473,13 +473,17 @@ body.path-course-view.editing .course-content > ul > li.section .content {
     padding-top: 0;
 }
 
-.course-content > ul > li.section .sectionname {
+.format-topics .course-content > ul > li.section .sectionname, .format-weeks .course-content > ul > li.section .sectionname {
     padding: 10px 20px !important;
     border-bottom: 1px solid $gu-island-border;
     background-color: #4f5961;
     color: #fff;
     margin-bottom: 20px;
     min-height: 38px;
+}
+
+.path-course-view .completionprogress {
+    display: none !important;
 }
 
 .course-content > ul > li.section {
@@ -634,6 +638,16 @@ page-item.active.disabled .page-link {
 
 .userlist .initialbar.lastinitial {
     margin-bottom: 20px;
+}
+
+.admintable td .icon {
+    display: block;
+    float: left;
+    margin-left:  0 !important;
+    margin-right: 0 !important;
+    width: 26px;
+    padding: 0 !important;
+    text-align: center;
 }
 
 // User profile fixes
