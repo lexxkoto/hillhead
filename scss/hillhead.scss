@@ -491,6 +491,10 @@ body.path-course-view.editing .course-content > ul > li.section .content {
     min-height: 38px;
 }
 
+.format-topics .course-content > ul > li.section .side.right, .format-weeks .course-content > ul > li.section .side.right {
+    background-color: #555 !important;
+}
+
 .path-course-view .completionprogress {
     display: none !important;
 }
