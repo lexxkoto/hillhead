@@ -261,7 +261,7 @@ header .usermenu .dropdown-toggle {
     display: inline-block;
 }
 
-.col-xs-4.user-menu {
+.col-xs-10.user-menu {
     text-align: right;
 }
 
@@ -582,8 +582,27 @@ div#gridshadebox_overlay {
 div#gridshadebox_content.absolute {
     top: 75px !important;
     z-index: 9999;
-    left: 20px !important;
-    right: 20px !important;
+    left: 40px !important;
+    right: 40px !important;
+}
+
+.gridshadebox_area {
+    width: 40px;
+    text-align: center;
+}
+
+.gridshadebox_arrow {
+    width: 30px;
+    height: 30px;
+    left: 5px;
+}
+
+.gridshadebox_previous_area {
+    left: -40px;
+}
+
+.gridshadebox_next_area {
+    right: -40px;
 }
 
 #gridshadebox_content.fit_to_window {
@@ -632,6 +651,11 @@ div#gridshadebox_content.absolute {
 
 .course-content > ul > li.section .right {
     padding: 0 20px !important;
+}
+
+.section .activity.modtype_label.label {
+    line-height: 1.5em !important;
+    font-weight: 300 !important;
 }
 
 body.path-course-view .course-content>ul>li.section .content {
@@ -732,7 +756,7 @@ ul.ctopics > li .sectionhead span.the_toggle::before {
 }
 
 ul.ctopics > li .sectionhead span.toggle_open::before {
-        transform-origin: 50% 50%;
+    ftransform-origin: 50% 50%;
     transform: rotate(90deg);
     transition: 300ms linear all;
 }
@@ -896,6 +920,10 @@ body#page-user-profile #region-main > .card-block .node_category .editprofile, b
 .action-menu .userpicture {
     width: 35px !important;
     height: 35px !important;
+}
+
+#id_moodle_additional_names {
+    display :none;
 }
 
 // Login Page Stuff
