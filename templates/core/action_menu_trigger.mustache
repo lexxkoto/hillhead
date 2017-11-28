@@ -18,7 +18,7 @@
     Action menu trigger.
 }}
 <div class="dropdown d-inline">
-    <a href="#" class="dropdown-toggle" id="dropdown-{{instance}}" title="{{title}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-label="{{#actiontext}}{{title}}{{/actiontext}}{{^actiontext}}Settings{{/actiontext}}" title=="{{#actiontext}}{{title}}{{/actiontext}}{{^actiontext}}Settings{{/actiontext}}" aria-expanded="false">{{{actiontext}}}{{{menutrigger}}}{{#icon}}{{#pix}}{{key}},{{component}},{{title}}{{/pix}}{{/icon}}{{#rawicon}}{{{.}}}{{/rawicon}}{{#menutrigger}}<b class="caret"></b>{{/menutrigger}}</a>
+    <a href="#" class="dropdown-toggle" id="dropdown-{{instance}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-label="{{#title}}{{title}}{{/title}}{{^title}}Settings{{/title}}" title="{{#title}}{{title}}{{/title}}{{^title}}Settings{{/title}}" aria-expanded="false">{{{actiontext}}}{{{menutrigger}}}{{#icon}}{{#pix}}{{key}},{{component}},{{title}}{{/pix}}{{/icon}}{{#rawicon}}{{{.}}}{{/rawicon}}{{#menutrigger}}<b class="caret"></b>{{/menutrigger}}</a>
     {{#secondary}}
         <div class="dropdown-menu dropdown-menu-right {{classes}}"{{#attributes}} {{name}}="{{value}}"{{/attributes}}>
             {{#items}}{{!
