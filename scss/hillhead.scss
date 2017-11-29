@@ -1224,8 +1224,9 @@ body.hillhead-bold * {
 #hh-acc-fb-on { font-weight: 700 !important; }
 #hh-acc-fb-of { font-weight: 300 !important; }
 
-.currentlySpeaking {
-    border-bottom: 1px solid dotted !important;
+.currentlySpeakingHighlight {
+    background-color: #FEC34E !important;
+    color: #000 !important;
 }
 
 // Hotfixes to integrate
