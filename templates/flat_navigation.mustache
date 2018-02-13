@@ -65,12 +65,7 @@
     <a class="list-group-item list-group-item-action {{#isactive}}font-weight-bold{{/isactive}}" href="{{{action}}}" data-key="{{key}}">
         <div class="m-l-{{get_indent}}">
             {{#is_section}}
-                <div class="media">
-                    <span class="media-left">
-                        {{#pix}}i/folder{{/pix}}
-                    </span>
-                    <span class="media-body">{{{text}}}</span>
-                </div>
+                    <i class="fa fa-list-ul"></i> {{{text}}}
             {{/is_section}}
             {{^is_section}}
                 {{{text}}}
