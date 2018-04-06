@@ -166,6 +166,11 @@ a.nav-link, a.btn-default {
     border-color: #D6DBDF;
 }
 
+#nav-drawer .list-group-item .text-holder {
+    display: block;
+    overflow: hidden;
+}
+
 #nav-drawer .list-group-item:first-child {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -206,6 +211,12 @@ header.navbar-light .navbar-brand {
 
 header .popover-region {
     margin-right: 20px;
+}
+
+.btn-drawertoggle {
+    background-color: #005398;
+    color: #fff;
+    border-color: transparent;
 }
 
 header .popover-region-toggle > i.fa {
@@ -499,7 +510,6 @@ body.path-course-view .course-content > ul > li.section {
 }
 
 body.path-course-view .course-content > ul > li.section .content {
-    padding-top: 7px;
     box-sizing: border-box;
 }
 
@@ -939,6 +949,18 @@ body#page-user-profile #region-main > .card-block .node_category .editprofile, b
     display :none;
 }
 
+// Alert fixes
+
+.alert, #page-admin-index .releasenoteslink, #page-admin-index .adminwarning, #page-admin-index .adminerror, .que .formulation, .que .outcome, .que .commen {
+    border-radius: 0 !important;
+    padding: 5px 10px !important;
+}
+
+.alert-danger a {
+    color: #a94442 !important;
+    text-decoration: underline;
+}
+
 // Login Page Stuff
 
 .gu-login {
@@ -1227,9 +1249,14 @@ body.hillhead-bold * {
 #nav-drawer .list-group-item div::before, #nav-drawer .list-group-item div i.fa {
     font-family: "FontAwesome";
     width: 1.5em;
-    display: inline-block;
+    display: block;
+    float: left;
     text-align: center;
     margin-right: 0.2em;
+}
+
+#nav-drawer .list-group-item div::before {
+    content: "\f105";
 }
 
 #nav-drawer .list-group-item[data-key="accessibility"] div::before {
@@ -1260,6 +1287,10 @@ body.hillhead-bold * {
     content: "\f19d";
 }
 
+#nav-drawer .list-group-item[data-key="mycourses"] div::before {
+    content: "\f19d";
+}
+
 #nav-drawer .list-group-item[data-key="participants"] div::before {
     content: "\f0c0";
 }
@@ -1282,6 +1313,10 @@ body.hillhead-bold * {
 
 #nav-drawer .list-group-item[data-key="coursehome"] div::before {
     content: "\f19d";
+}
+
+#nav-drawer .list-group-item[data-key="addblock"] div::before {
+    content: "\f0fe";
 }
 
 #hh-acc-ft-de { font-family: "Hillhead", "Ubuntu", "Trebuchet MS", Arial, sans-serif; }

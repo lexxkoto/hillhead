@@ -161,6 +161,27 @@ switch($hillheadnotificationtype) {
         $notiftext = '';
 }
 
+$hillheadsmartalerts = get_config('theme_hillhead', 'hillhead_smart_alerts');
+
+if($hillheadsmartalerts == 'enabled') {
+
+    $courseDetails = $PAGE->course;
+    
+    if((!empty($courseDetails->id)) && $courseDetails->id != 1) {
+        if($courseDetails->visible=='0') {
+            $notiftext .= '<div class="alert alert-danger"><i class="fa fa-info-circle"></i>&emsp;<strong>This course is currently hidden.</strong> You can see it, but students can\'t. You can unhide this course <a href="edit.php?id='.$courseDetails->id.'">on the settings page</a>.</div>';
+        }
+            
+        $context = context_course::instance($courseDetails->id);
+        $studentyUsers = count_role_users(3, $PAGE->context);
+        
+        if($studentyUsers === 0) {
+             $notiftext .= '<div class="alert alert-danger"><i class="fa fa-info-circle"></i>&emsp;<strong>There are no students on this course.</strong> <a href="https://www.gla.ac.uk/myglasgow/moodle/universityofglasgowmoodleguides/enrollingstudentsonmoodlecourses/" target="_blank">How do I add students to my course?</a></div>';
+        }
+        
+    }
+}
+
 $usesAccessibilityTools=get_user_preferences('theme_hillhead_accessibility', false);
 
 if($usesAccessibilityTools === false) {

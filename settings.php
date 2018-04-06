@@ -91,7 +91,20 @@ if ($ADMIN->fulltree) {
     
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);                                                                                                             
     $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
-    $page->add($setting);  
+    $page->add($setting);
+    
+    $name = 'theme_hillhead/hillhead_smart_alerts';                                                                                                   
+    $title = get_string('hillhead_smart_alerts', 'theme_hillhead');                                                                                   
+    $description = get_string('hillhead_smart_alerts_desc', 'theme_hillhead');
+    
+    $choices = Array(
+        'enabled' => get_string('hillhead_smart_alerts_on', 'theme_hillhead'),
+        'disabled' => get_string('hillhead_smart_alerts_off', 'theme_hillhead')
+    );                                                                     
+    $default = 'disabled';
+    
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);                                                                                                                                                                                     
+    $page->add($setting);
  
     // Custom System Notification                                                                                   
     $setting = new admin_setting_configtextarea('theme_hillhead/hillhead_notification',                                                              
