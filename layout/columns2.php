@@ -145,7 +145,7 @@ switch($theme_hillhead_stripstyles) {
 $hillheadnotificationtype = get_config('theme_hillhead', 'hillhead_notification_type');
 $hillheadNotificationText =  get_config('theme_hillhead', 'hillhead_notification');
 
-if(!empty($_SESSION['SESSION']->hillhead_notifications) || !@array_key_exists(md5($hillheadNotificationText), $_SESSION['SESSION']->hillhead_notifications)) {
+if(empty($_SESSION['SESSION']->hillhead_notifications) || !@array_key_exists(md5($hillheadNotificationText), $_SESSION['SESSION']->hillhead_notifications)) {
     switch($hillheadnotificationtype) {
         case 'alert-danger':
             $notiftext = '<div class="alert alert-danger"><a class="close" href="'.$CFG->wwwroot.'/theme/hillhead/notification.php?h='.md5($hillheadNotificationText).'" aria-label="Close"><span aria-hidden="true">&times;</span></a><i class="fa fa-warning"></i><span>'.$hillheadNotificationText.'</span></div>';
