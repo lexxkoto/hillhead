@@ -56,3 +56,4 @@ $string['hillhead_smart_alerts'] = 'Smart Alerts';
 $string['hillhead_smart_alerts_desc'] = 'Smart Alerts let lecturers know about potential problems with their courses. For example, they will remind a lecturer if their course is hidden from students.';
 $string['hillhead_smart_alerts_on'] = 'Enabled';
 $string['hillhead_smart_alerts_off'] = 'Disabled';
+$string['purgenotificationstask'] = 'Purge Dismissed Notification Preferences';

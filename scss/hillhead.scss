@@ -975,23 +975,27 @@ body#page-user-profile #region-main > .card-block .node_category .editprofile, b
     border-color: #E7E2C6 !important;
 }
 
-.alert-danger a {
+.alert-danger span a {
     color: #a94442 !important;
     text-decoration: underline;
 }
 
-.alert-warning a {
+.alert-warning span a {
     color: #8a6d3b !important;
     text-decoration: underline;
 }
 
-.alert-info a {
+.alert-info span a {
     color: #31708f !important;
     text-decoration: underline;
 }
 
-.alert > *:last-child {
+.alert *:last-child {
     margin-bottom: 0;
+}
+
+.alert a.close {
+    color: #000 !important;
 }
 
 // Login Page Stuff
