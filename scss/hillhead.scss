@@ -951,13 +951,42 @@ body#page-user-profile #region-main > .card-block .node_category .editprofile, b
 
 // Alert fixes
 
+.alert i {
+    display: block;
+    float: left;
+    margin-right: 0.2em;
+    float: left;
+    width: 1.4em;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.alert span {
+    display: block;
+    margin-left: 1.6em;
+}
+
 .alert, #page-admin-index .releasenoteslink, #page-admin-index .adminwarning, #page-admin-index .adminerror, .que .formulation, .que .outcome, .que .commen {
     border-radius: 0 !important;
     padding: 5px 10px !important;
 }
 
+.alert-warning {
+    border-color: #E7E2C6 !important;
+}
+
 .alert-danger a {
     color: #a94442 !important;
+    text-decoration: underline;
+}
+
+.alert-warning a {
+    color: #8a6d3b !important;
+    text-decoration: underline;
+}
+
+.alert-info a {
+    color: #31708f !important;
     text-decoration: underline;
 }
 

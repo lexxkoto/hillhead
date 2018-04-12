@@ -146,16 +146,16 @@ $hillheadnotificationtype = get_config('theme_hillhead', 'hillhead_notification_
 
 switch($hillheadnotificationtype) {
     case 'alert-danger':
-        $notiftext = '<div class="alert alert-danger"><i class="fa fa-warning"></i>&emsp;'.get_config('theme_hillhead', 'hillhead_notification').'</div>';
+        $notiftext = '<div class="alert alert-danger"><i class="fa fa-warning"></i><span>'.get_config('theme_hillhead', 'hillhead_notification').'</span></div>';
         break;
     case 'alert-warning':
-        $notiftext = '<div class="alert alert-warning"><i class="fa fa-warning"></i>&emsp;'.get_config('theme_hillhead', 'hillhead_notification').'</div>';
+        $notiftext = '<div class="alert alert-warning"><i class="fa fa-warning"></i><span>'.get_config('theme_hillhead', 'hillhead_notification').'</span></div>';
         break;
     case 'alert-success':
-        $notiftext = '<div class="alert alert-success"><i class="fa fa-info-circle"></i>&emsp;'.get_config('theme_hillhead', 'hillhead_notification').'</div>';
+        $notiftext = '<div class="alert alert-success"><i class="fa fa-info-circle"></i><span>'.get_config('theme_hillhead', 'hillhead_notification').'</span></div>';
         break;
     case 'alert-info':
-        $notiftext = '<div class="alert alert-info"><i class="fa fa-info-circle"></i>&emsp;'.get_config('theme_hillhead', 'hillhead_notification').'</div>';
+        $notiftext .= '<div class="alert alert-info"><i class="fa fa-info-circle"></i><span>'.get_config('theme_hillhead', 'hillhead_notification').'</span></div>';
         break;
     default:
         $notiftext = '';
@@ -169,17 +169,22 @@ if($hillheadsmartalerts == 'enabled') {
     
     if((!empty($courseDetails->id)) && $courseDetails->id != 1) {
         if($courseDetails->visible=='0') {
-            $notiftext .= '<div class="alert alert-danger"><i class="fa fa-info-circle"></i>&emsp;<strong>This course is currently hidden.</strong> You can see it, but students can\'t. You can unhide this course <a href="edit.php?id='.$courseDetails->id.'">on the settings page</a>.</div>';
+            $notiftext .= '<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><i class="fa fa-info-circle"></i><span><strong>This course is currently hidden.</strong> You can see it, but students can\'t. You can unhide this course <a href="edit.php?id='.$courseDetails->id.'">on the settings page</a>.</span></div>';
         }
             
         $context = context_course::instance($courseDetails->id);
         $studentyUsers = count_role_users(3, $PAGE->context);
         
         if($studentyUsers === 0) {
-             $notiftext .= '<div class="alert alert-danger"><i class="fa fa-info-circle"></i>&emsp;<strong>There are no students on this course.</strong> <a href="https://www.gla.ac.uk/myglasgow/moodle/universityofglasgowmoodleguides/enrollingstudentsonmoodlecourses/" target="_blank">How do I add students to my course?</a></div>';
+             $notiftext .= '<div class="alert alert-warning"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><i class="fa fa-info-circle"></i><span><strong>There are no students on this course.</strong> <a href="https://www.gla.ac.uk/myglasgow/moodle/universityofglasgowmoodleguides/enrollingstudentsonmoodlecourses/" target="_blank">How do I add students to my course?</a></span></div>';
+        }
+        
+        if(($courseDetails->enddate) < time()) {
+            $notiftext .= '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><i class="fa fa-info-circle"></i><span><strong>This course\'s end date is in the past.</strong> If you\'re still using this course, you should update the end date so Automatic Rollover works. You can change your course\'s start and end dates <a href="edit.php?id='.$courseDetails->id.'">on the settings page</a>.</span></div>';
         }
         
     }
+    
 }
 
 $usesAccessibilityTools=get_user_preferences('theme_hillhead_accessibility', false);
