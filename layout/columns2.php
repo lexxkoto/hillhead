@@ -145,7 +145,7 @@ switch($theme_hillhead_stripstyles) {
 $hillheadnotificationtype = get_config('theme_hillhead', 'hillhead_notification_type');
 $hillheadNotificationText =  get_config('theme_hillhead', 'hillhead_notification');
 
-if(empty($_SESSION['SESSION']->hillhead_notifications) || !@array_key_exists(md5($hillheadNotificationText), $_SESSION['SESSION']->hillhead_notifications)) {
+if(empty($_SESSION['SESSION']->hillhead_notifications) || !array_key_exists(md5($hillheadNotificationText), $_SESSION['SESSION']->hillhead_notifications)) {
     switch($hillheadnotificationtype) {
         case 'alert-danger':
             $notiftext = '<div class="alert alert-danger"><a class="close" href="'.$CFG->wwwroot.'/theme/hillhead/notification.php?h='.md5($hillheadNotificationText).'" aria-label="Close"><span aria-hidden="true">&times;</span></a><i class="fa fa-warning"></i><span>'.$hillheadNotificationText.'</span></div>';
@@ -174,7 +174,7 @@ if($hillheadsmartalerts == 'enabled') {
     
     if((!empty($courseDetails->id)) && $courseDetails->id != 1) {
         if($courseDetails->visible=='0') {
-            if(!array_key_exists(md5($courseDetails->id.'courseinvisible'), $_SESSION['SESSION']->hillhead_notifications)) {
+            if(empty($_SESSION['SESSION']->hillhead_notifications) || !array_key_exists(md5($courseDetails->id.'courseinvisible'), $_SESSION['SESSION']->hillhead_notifications)) {
                 $notiftext .= '<div class="alert alert-info"><a class="close" href="'.$CFG->wwwroot.'/theme/hillhead/notification.php?h='.md5($courseDetails->id.'courseinvisible').'" aria-label="Close"><span aria-hidden="true">&times;</span></a><i class="fa fa-info-circle"></i><span><strong>This course is currently hidden.</strong> You can see it, but students can\'t. You can unhide this course <a href="edit.php?id='.$courseDetails->id.'">on the settings page</a>.</span></div>';
             }
         }
@@ -183,13 +183,13 @@ if($hillheadsmartalerts == 'enabled') {
         $studentyUsers = count_role_users(3, $PAGE->context);
         
         if($studentyUsers === 0) {
-            if(!array_key_exists(md5($courseDetails->id.'coursenostudents'), $_SESSION['SESSION']->hillhead_notifications)) {
+            if(empty($_SESSION['SESSION']->hillhead_notifications) || !array_key_exists(md5($courseDetails->id.'coursenostudents'), $_SESSION['SESSION']->hillhead_notifications)) {
                 $notiftext .= '<div class="alert alert-warning"><a class="close" href="'.$CFG->wwwroot.'/theme/hillhead/notification.php?h='.md5($courseDetails->id.'coursenostudents').'" aria-label="Close"><span aria-hidden="true">&times;</span></a><i class="fa fa-info-circle"></i><span><strong>There are no students on this course.</strong> <a href="https://www.gla.ac.uk/myglasgow/moodle/universityofglasgowmoodleguides/enrollingstudentsonmoodlecourses/" target="_blank">How do I add students to my course?</a></span></div>';
             }
         }
         
         if(($courseDetails->enddate) < time()) {
-            if(!array_key_exists(md5($courseDetails->id.'courseenddate'), $_SESSION['SESSION']->hillhead_notifications)) {
+            if(empty($_SESSION['SESSION']->hillhead_notifications) || !array_key_exists(md5($courseDetails->id.'courseenddate'), $_SESSION['SESSION']->hillhead_notifications)) {
                 $notiftext .= '<div class="alert alert-danger"><a class="close" href="'.$CFG->wwwroot.'/theme/hillhead/notification.php?h='.md5($courseDetails->id.'courseenddate').'" aria-label="Close"><span aria-hidden="true">&times;</span></a><i class="fa fa-info-circle"></i><span><strong>This course\'s end date is in the past.</strong> If you\'re still using this course, you should update the end date so Automatic Rollover works. You can change your course\'s start and end dates <a href="edit.php?id='.$courseDetails->id.'">on the settings page</a>.</span></div>';
             }
         }
