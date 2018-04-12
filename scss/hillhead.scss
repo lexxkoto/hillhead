@@ -990,6 +990,10 @@ body#page-user-profile #region-main > .card-block .node_category .editprofile, b
     text-decoration: underline;
 }
 
+.alert > *:last-child {
+    margin-bottom: 0;
+}
+
 // Login Page Stuff
 
 .gu-login {
