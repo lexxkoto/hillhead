@@ -995,6 +995,10 @@ body#page-user-profile #region-main > .card-block .node_category .editprofile, b
     text-decoration: underline;
 }
 
+.alert p {
+    margin-bottom: 10px;
+}
+
 .alert *:last-child {
     margin-bottom: 0;
 }
