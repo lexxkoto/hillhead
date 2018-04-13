@@ -602,6 +602,11 @@ course-content ul.ctopics li.section .content div.toggle {
     background: transparent !important;
 }
 
+.section .side {
+    // Fix for Safari's space above topic headings
+    margin-top: 8px !important;
+}
+
 div#gridshadebox_overlay {
     z-index: 9998;
 }
