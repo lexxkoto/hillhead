@@ -21,7 +21,7 @@
 
     <div class="container-fluid navbar-nav">
         <div class="row">
-            <div class="col-sm-4 col-xs-2">
+            <div class="col-md-4 col-sm-3 col-xs-2">
                 <div data-region="drawer-toggle">
                     <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn pull-xs-left m-r-1 btn-drawertoggle" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav"><span aria-hidden="true">&#9776;</span><span class="sr-only">{{#str}}expand, core{{/str}}</span></button>
                     </div>
@@ -39,14 +39,15 @@
                     <span class="site-name hidden-sm-down">{{{ sitename }}}</span>
                 </a>
             </div>
-            <div class="col-sm-4 hidden-xs-down">
+            <div class="col-md-4 col-sm-4 hidden-xs-down">
             {{{ output.search_box }}}
             </div>
-            <div class="col-sm-4 col-xs-10 user-menu">
-            <!-- navbar_plugin_output -->
-                {{{ output.navbar_plugin_output }}}
+            <div class="col-md-4 col-sm-5 col-xs-10 user-menu">
                 <!-- user_menu -->
                 {{{ output.user_menu }}}
+                <!-- navbar_plugin_output -->
+                {{{ output.navbar_plugin_output }}}
+                {{{ hillheadhelplink }}}
             </div>
         </div>
 

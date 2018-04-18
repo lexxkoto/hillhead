@@ -31,7 +31,7 @@ $string['region-side-pre'] = 'Right';
 $string['advancedsettings'] = 'Advanced settings';                                                                                                                                                                                        
 $string['brandcolor'] = 'Brand colour';                                                                                                                                                                                       
 $string['brandcolor_desc'] = 'The accent colour.';                                                                                                                                                                                        
-$string['configtitle'] = 'Photo settings';                                                                                                                                                                                         
+$string['configtitle'] = 'Hillhead settings';                                                                                                                                                                                         
 $string['generalsettings'] = 'General settings';                                                                                                                                                                                                                                                                                                
 $string['presetfiles'] = 'Additional theme preset files';                                                                                                                                                                                
 $string['presetfiles_desc'] = 'Preset files can be used to dramatically alter the appearance of the theme. See <a href=https://docs.moodle.org/dev/Boost_Presets>Boost presets</a> for information on creating and sharing your own preset files, and see the <a href=http://moodle.net/boost>Presets repository</a> for presets that others have shared.';                                                                                                             
@@ -57,3 +57,7 @@ $string['hillhead_smart_alerts_desc'] = 'Smart Alerts let lecturers know about p
 $string['hillhead_smart_alerts_on'] = 'Enabled';
 $string['hillhead_smart_alerts_off'] = 'Disabled';
 $string['purgenotificationstask'] = 'Purge Dismissed Notification Preferences';
+$string['notificationsettings'] = 'Notifiications and Alerts';
+$string['helpsettings'] = 'Help Settings';
+$string['helplink'] = 'Help Link';
+$string['helplink_desc'] = 'If this setting isn\'t blank, there will be a "Help" link in the top right corner of the navigation bar. If you have your own help resource, you can enter the URL here. Otherwise, you could include a link to the Moodle documentation.';

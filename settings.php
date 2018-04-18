@@ -61,21 +61,21 @@ if ($ADMIN->fulltree) {
     $settings->add($page);                                                                                                          
  
     // Advanced settings.                                                                                                           
-    $page = new admin_settingpage('theme_hillhead_advanced', get_string('advancedsettings', 'theme_hillhead'));                           
- 
-    // Raw SCSS to include before the content.                                                                                      
-    $setting = new admin_setting_configtextarea('theme_hillhead/scsspre',                                                              
-        get_string('rawscsspre', 'theme_hillhead'), get_string('rawscsspre_desc', 'theme_hillhead'), '', PARAM_RAW);                      
-    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
-    $page->add($setting);                                                                                                           
- 
-    // Raw SCSS to include after the content.                                                                                       
-    $setting = new admin_setting_configtextarea('theme_hillhead/scss', get_string('rawscss', 'theme_hillhead'),                           
-        get_string('rawscss_desc', 'theme_hillhead'), '', PARAM_RAW);                                                                  
-    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
-    $page->add($setting);                                                                                                           
- 
-    // Custom System Notification Theme
+    $page = new admin_settingpage('theme_hillhead_notifications', get_string('notificationsettings', 'theme_hillhead'));      
+    
+    $name = 'theme_hillhead/hillhead_smart_alerts';                                                                                                   
+    $title = get_string('hillhead_smart_alerts', 'theme_hillhead');                                                                                   
+    $description = get_string('hillhead_smart_alerts_desc', 'theme_hillhead');
+    
+    $choices = Array(
+        'enabled' => get_string('hillhead_smart_alerts_on', 'theme_hillhead'),
+        'disabled' => get_string('hillhead_smart_alerts_off', 'theme_hillhead')
+    );                                                                     
+    $default = 'disabled';
+    
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);                                                                                                                                                                                     
+    $page->add($setting);
+    
     $name = 'theme_hillhead/hillhead_notification_type';                                                                                                   
     $title = get_string('hillhead_notification_type', 'theme_hillhead');                                                                                   
     $description = get_string('hillhead_notification_type_desc', 'theme_hillhead');
@@ -91,24 +91,41 @@ if ($ADMIN->fulltree) {
     
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);                                                                                                                                                                                    
     $page->add($setting);
-    
-    $name = 'theme_hillhead/hillhead_smart_alerts';                                                                                                   
-    $title = get_string('hillhead_smart_alerts', 'theme_hillhead');                                                                                   
-    $description = get_string('hillhead_smart_alerts_desc', 'theme_hillhead');
-    
-    $choices = Array(
-        'enabled' => get_string('hillhead_smart_alerts_on', 'theme_hillhead'),
-        'disabled' => get_string('hillhead_smart_alerts_off', 'theme_hillhead')
-    );                                                                     
-    $default = 'disabled';
-    
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);                                                                                                                                                                                     
-    $page->add($setting);
  
     // Custom System Notification                                                                                   
     $setting = new admin_setting_configtextarea('theme_hillhead/hillhead_notification',                                                              
         get_string('hillhead_notification', 'theme_hillhead'), get_string('hillhead_notification_desc', 'theme_hillhead'), '', PARAM_RAW);                                                                                            
     $page->add($setting);
+ 
+    // Must add the page after definiting all the settings!                                                                         
+    $settings->add($page);  
+    
+    $page = new admin_settingpage('theme_hillhead_help', get_string('helpsettings', 'theme_hillhead'));
+ 
+    $setting = new admin_setting_configtext('theme_hillhead/hillhead_helpcentre', get_string('helplink', 'theme_hillhead'),                           
+        get_string('helplink_desc', 'theme_hillhead'), '', PARAM_RAW);                                                                                                                                        
+    $page->add($setting); 
+ 
+    // Must add the page after definiting all the settings!                                                                         
+    $settings->add($page);  
+ 
+    // Advanced settings.                                                                                                           
+    $page = new admin_settingpage('theme_hillhead_advanced', get_string('advancedsettings', 'theme_hillhead'));                           
+ 
+    // Raw SCSS to include before the content.                                                                                      
+    $setting = new admin_setting_configtextarea('theme_hillhead/scsspre',                                                              
+        get_string('rawscsspre', 'theme_hillhead'), get_string('rawscsspre_desc', 'theme_hillhead'), '', PARAM_RAW);                      
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);                                                                                                           
+ 
+    // Raw SCSS to include after the content.                                                                                       
+    $setting = new admin_setting_configtextarea('theme_hillhead/scss', get_string('rawscss', 'theme_hillhead'),                           
+        get_string('rawscss_desc', 'theme_hillhead'), '', PARAM_RAW);                                                                  
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);                                                                                                           
+ 
+    // Custom System Notification Theme
+    
     
     $setting = new admin_setting_configtextarea('theme_hillhead/login_intro',                                                              
     get_string('login_intro', 'theme_hillhead'), get_string('login_intro_desc', 'theme_hillhead'), '', PARAM_RAW);                                                                                            

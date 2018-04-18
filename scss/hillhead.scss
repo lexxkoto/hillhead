@@ -8,6 +8,7 @@ $gu-forest: #005133;
 $gu-cobalt: #0075B0;
 $gu-rose: #D278AB;
 $gu-heather: #5B537D;
+$gu-skyblue: #005398;
 
 $gu-header-icons: #ddd;
 
@@ -147,7 +148,7 @@ b, strong {
 }
 
 header.navbar a.dropdown-toggle {
-    color: #fff !important;
+    color: $gu-background !important;
 }
 
 header.navbar a.dropdown-item {
@@ -197,7 +198,7 @@ h3.sectionname a {
 // Page header
 
 header.navbar {
-    background-color: $gu-blue;
+    background-color: $gu-skyblue;
     border-bottom: $border-width solid $gu-blue-border;
 }
 
@@ -209,23 +210,42 @@ header.navbar-light .navbar-brand {
     width: 111px;
 }
 
-header .popover-region {
-    margin-right: 20px;
+header.navbar .popover-region {
+    margin-right: 0;
+    margin-left: 15px;
+    display: inline-block;
+}
+
+header .help-centre {
+    display: inline-block;
 }
 
 .btn-drawertoggle {
-    background-color: #005398;
-    color: #fff;
+    background-color: $gu-blue;
+    color: $gu-background;
     border-color: transparent;
 }
 
-header .popover-region-toggle > i.fa {
+i.fa, header .help-centre a {
+    display: inline-block !important;
+}
+
+header .popover-region-toggle > i.fa, header .help-centre i.fa {
     display: inline-block;
-    font-size: 18px;
-    color: $gu-header-icons;
-    line-height: 35px;
-    text-shadow: 0 1px 0 #eee, 0 -1px 0 #031425;
+    font-size: 24px;
+    color: $gu-background;
+    line-height: 32px;
+    text-shadow: 0 1px 0 #fff, 0 -1px 0 $gu-blue;
     height: auto !important;
+    vertical-align: middle !important;
+}
+
+.popover-region-toggle::after {
+    bottom: -10px !important;
+}
+
+.popover-region-toggle::before {
+    bottom: -11px !important;
 }
 
 header.navbar .count-container {
@@ -238,8 +258,8 @@ header.navbar .count-container {
 }
 
 header .navbar-nav .nav-link {
-    padding-top: 0;
-    padding-top: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 header.navbar .count-container.hidden {
@@ -255,7 +275,7 @@ body.notloggedin header .usermenu {
 }
 
 body.notloggedin header .usermenu a, body.notloggedin header .usermenu a:hover {
-    color: #fff;
+    color: $gu-background;
     text-decoration: underline;
 }
 
@@ -291,6 +311,9 @@ header .usermenu .dropdown-toggle {
     text-align: right;
 }
 
+header.navbar .d-inline {
+    vertical-align: middle !important;
+}
 
 // Responsive changes and retina displays
 
@@ -322,6 +345,12 @@ body#page-login-index {
 
 @media (max-width: 767px) {
     .mod-indent {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .usertext {
         display: none !important;
     }
 }
@@ -391,6 +420,10 @@ footer h3 {
     text-decoration: none;
 }
 
+.moodle-footer-doc-link i {
+    display: none !important;
+}
+
 // Messaging tidy-ups
 
 .message .content.right {
@@ -435,7 +468,7 @@ footer h3 {
 
 .block-region .card-block .card-title, .block-region #page-enrol-users #filterform .card-title, #page-enrol-users .block-region #filterform .card-title, .block-region .userprofile .profile_tree section .card-title, .userprofile .profile_tree .block-region section .card-title, .block-region .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax .yui-layout-unit-right .card-title, .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax .block-region .yui-layout-unit-right .card-title, .block-region .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax .yui-layout-unit-bottom .card-title, .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax .block-region .yui-layout-unit-bottom .card-title, .block-region .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .chat-message.course-theme .card-title, .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages .block-region .chat-message.course-theme .card-title, .block-region .well .card-title {
     text-transform: none !important;
-    background-color: $gu-blue;
+    background-color: $gu-skyblue;
     color: #fff;
     font-weight: 300 !important;
 }
@@ -946,8 +979,13 @@ body#page-user-profile #region-main > .card-block .node_category .editprofile, b
 }
 
 .action-menu .userpicture {
-    width: 35px !important;
-    height: 35px !important;
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.action-menu .userpicture {
+    margin-left: 0;
+    margin-right: 15px;
 }
 
 #id_moodle_additional_names {

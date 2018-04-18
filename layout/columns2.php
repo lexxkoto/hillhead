@@ -579,6 +579,13 @@ foreach($footerLinks['right'] as $sectionHeading=>$sectionLinks) {
 }
 $footerText .= '</div></div>';
 
+$hillheadHelpLink = get_config('theme_hillhead', 'hillhead_helpcentre');
+if(!empty($hillheadHelpLink)) {
+    $hillheadHelpLinkText = '<div class="help-centre popover-region"><div class="nav-link"><a href="'.$hillheadHelpLink.'" title="Help with Moodle"><i class="fa fa-question-circle"></i></a></div></div>';
+} else {
+    $hillheadHelpLinkText = '';
+}
+
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
@@ -596,7 +603,8 @@ $templatecontext = [
     'accessibilityText' => $accTxt,
     'accessibilityButton' => $accBtn,
     'footerText' => $footerText,
-    'extraScripts' => $extraScripts
+    'extraScripts' => $extraScripts,
+    'hillheadhelplink' => $hillheadHelpLinkText
 ];
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
