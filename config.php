@@ -150,3 +150,5 @@ $THEME->layouts = [
         'defaultregion' => 'side-pre'
     )
 ];
+
+$THEME->iconsystem = '\\theme_hillhead\\output\\icon_system_fontawesome';

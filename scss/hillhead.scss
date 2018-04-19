@@ -1154,6 +1154,10 @@ span.MathJax_SVG, span.MathJax_CHTML, span.MathJax_PHTML,  span.MathJax {
     font-family: serif !important;
 }
 
+.form-group abbr.initialism {
+    border-bottom: none !important;
+}
+
 // Accessibility features
 
 body.hillhead-font-comic {
