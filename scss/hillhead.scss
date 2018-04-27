@@ -239,7 +239,6 @@ nav .btn-drawertoggle {
     color: $gu-background;
     border-color: transparent;
     height: 35px;
-    border-radius: 4px;
     width: 45px;
     padding: 0;
     margin-right: 0 !important;
@@ -313,6 +312,10 @@ body.notloggedin header .usermenu a, body.notloggedin header .usermenu a:hover {
     }
 }
 
+.action-menu a {
+    color: #777 !important;
+}
+
 #page.container-fluid {
     padding-left: 20px !important;
     padding-right: 20px !important;
@@ -340,10 +343,9 @@ nav.navbar .d-inline {
     vertical-align: middle !important;
 }
 
-// Make Buttons Great Again!
-
-.btn {
-    border-radius: 0.25rem;
+.hillhead-search-input-wrapper .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 // Responsive changes and retina displays
@@ -422,7 +424,7 @@ footer h3 {
 
 .footer-links h4 {
 	padding: 0;
-	font-size: 1rem;
+	font-size: 1em;
 	line-height:19px;
 	vertical-align: baseline;
 	color: $gu-blue;
@@ -468,6 +470,14 @@ footer h3 {
 }
 
 // Block Stuff
+
+.card {
+    padding: 20px;
+}
+
+.block.card {
+    padding: 0;
+}
 
 .card-title {
     font-size: 1rem;
@@ -605,6 +615,11 @@ body.path-course-view .course-content > ul > li.section {
     overflow: visible;
 }
 
+body.path-course.pagelayout-incourse #region-main .card-block,
+body.path-mod-coursework #region-main .card-block {
+    padding: 20px !important;
+}
+
 body.path-course-view .course-content > ul > li.section .content {
     box-sizing: border-box;
 }
@@ -634,7 +649,8 @@ body.path-course-view.editing .course-content > ul > li.section .content {
     overflow: visible;
 }
 
-body.editing .course-content > ul > li.section .sectionname {
+body.format-topics.editing .course-content > ul > li.section .sectionname,
+body.format-weeks.editing .course-content > ul > li.section .sectionname {
     padding-top: 10px !important;
 }
 
@@ -748,6 +764,10 @@ div#gridshadebox_content.absolute {
     color: #fff;
 }
 
+body#page-course-view-topcoll .course-content > ul > li.section .sectionname a, body#page-course-view-topcoll .course-content > ul > li.section i {
+    color: inherit !important;
+}
+
 .course-content > ul > li.section .section-modchooser {
     padding: 5px 20px !important;
     border-top: 1px solid $gu-island-border;
@@ -803,7 +823,8 @@ ul.ctopics li.section .side a.dropdown-toggle {
 }
 
 div.course-content, ul.ctopics {
-    overflow: visible !important;
+    overflow-y: visible !important;
+    overflow-x: hidden;
 }
 
 .course-content>ul.ctopics>li.section .side i {
@@ -815,9 +836,15 @@ div.course-content, ul.ctopics {
 }
 
 .course-content ul.ctopics>li.section .side.left {
-    padding-top: 6px !important;
+    padding-top: 14px !important;
     width: 40px !important;
-    margin-left: 20px !important;
+    margin-left: 0 !important;
+}
+
+.course-content ul.ctopics>li.section .side.right {
+    padding-top: 14px !important;
+    width: 60px !important;
+    margin-right: 0 !important;
 }
 
 .course-content ul.ctopics>li.section .side.left span.section-handle {
@@ -876,7 +903,11 @@ ul.ctopics > li .sectionhead span.the_toggle::before {
     transform-origin: 50% 50%;
     transform: rotate(0deg);
     transition: 300ms linear all;
-    margin-left: -60px;
+    margin-left: -20px;
+}
+
+ul.ctopics > li .sectionhead span.the_toggle::before {
+    margin-left: -20px;
 }
 
 ul.ctopics > li .sectionhead span.toggle_open::before {
