@@ -542,7 +542,7 @@ $footerLinks = Array(
 
 $siteContext = context_system::instance();
 $isAdmin = has_capability('moodle/site:config', $siteContext);
-$canSeeGUIDReport = has_capability('moodle/site:config', $siteContext);
+$canSeeGUIDReport = has_capability('report/guid:view', $siteContext);
 
 if($isAdmin) {
     $footerLinks['middle']['Site Links']['Purge All Caches'] = $CFG->wwwroot.'/admin/purgecaches.php?confirm=1&sesskey='.sesskey().'&returnurl='.$PAGE->url->out_as_local_url(false);
