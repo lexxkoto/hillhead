@@ -80,7 +80,15 @@ class icon_system_fontawesome extends \core\output\icon_system_fontawesome {
             'core:t/move'                       => 'fa-arrows-alt-v',
             'core:e/advance_hr'                 => 'fa-arrows-alt-h',
             'core:e/insert_horizontal_ruler'    => 'fa-arrows-alt-h',
-
+            'core:a/logout'                     => 'fa-sign-out-alt',
+            'theme:fp/logout'                   => 'fa-sign-out-alt',
+            'core:b/document-edit'              => 'fa-edit',
+            'core:e/special_character'          => 'fa-edit',
+            'core:i/edit'                       => 'fa-edit',
+            'core:i/permissions'                => 'fa-edit',
+            'core:t/editinline'                 => 'fa-edit',
+            'core:t/editstring'                 => 'fa-edit',
+            'core:t/passwordunmask-edit'        => 'fa-edit',
         );
         
         $merged = array_merge($iconmap, $overrides);
